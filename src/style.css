@@ -1,0 +1,60 @@
+#root {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto, auto;
+    grid-template-areas: "nav", "main";
+    max-width: 90%;
+    margin: auto;
+}
+
+nav {
+    grid-area: "nav";
+
+
+}
+
+nav ul {
+    padding-left: 0%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+nav ul li {
+    text-decoration: none;
+}
+
+main {
+    grid-area: "main";
+    display: flex;
+    flex-direction: column;
+}
+
+#forms {
+    display: flex;
+    flex-direction: column;
+}
+
+#toDoCards {
+    display: flex;
+    flex-direction: row;
+    flex-basis: auto;
+    flex-wrap: wrap;
+}
+
+#toDoCards h2 {
+    flex-basis: 100%;
+}
+
+.toDoCard {
+    display: flex;
+    flex-direction: column;
+    margin:2rem;
+    margin-left: 0%;
+}
+
+.toDoCard .button {
+    max-width: 6rem;
+    margin-left: auto;
+}
