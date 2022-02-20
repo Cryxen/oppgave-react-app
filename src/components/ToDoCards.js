@@ -1,14 +1,30 @@
 import React from 'react';
-import Button from './Button'
+import { useState } from 'react';
+import ToDoCard from './ToDoCard';
+import { Fragment } from 'react/cjs/react.development';
+
+
+
+
 
 const ToDoCards = () => {
+    const [showCard, setShowCard] = useState(true)
+
+    const clickButton = (event) => {
+        console.log('Button in toDoCard pressed');
+        setShowCard(!showCard);
+    }
+
     return (
-        <article className="toDoCard">
-            <h3>Todotitle</h3>
-            <p>Her vil vi legge cards</p>
-            <Button value={'Complete'} />
-      </article>
+        <Fragment>
+            {showCard ? (
+            <ToDoCard onClick={clickButton} />
+            ) : null}
+            </Fragment>
     )
 }
 
+
 export default ToDoCards
+
+

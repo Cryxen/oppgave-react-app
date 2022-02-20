@@ -1,57 +1,77 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { useState } from 'react';
 // Import components
 import Nav from './components/Nav'
-import Forms from './components/Forms'
+import Form from './components/Form'
+import Textarea from './components/Textarea'
 import ToDoCards from './components/ToDoCards'
+import Button from './components/Button'
 
 // Placeholder for username logic
 let username = ''
 
 
 const App = () => {
-// Handle form:
 
-const[text, setText] = useState({title:'', content:''})
-const textChange = (event) => {
-  const {name} = event.currentTarget
-  const {value} = event.currentTarget
-  console.log(name)
-  console.log(value)
-  setText((prevState) => ({...prevState, [name]: value}))
-  console.log('test')
-  console.log(text);
+
+// Handle form:
+//title:
+const [title, setTitle] = useState('')
+const titleChange = (event) => {
+  console.log(event.currentTarget.value);
+  setTitle(event.currentTarget.value);
+  console.log('current title:', title)
+};
+const [content, setContent] = useState('')
+const contentChange = (event) => {
+  console.log(event.currentTarget.value);
+  setContent(event.currentTarget.value);
+  console.log('current content:', content)
 };
 
 
+// Handle the button clicks
+const buttonClick = (event) =>
+{
+  if(event.currentTarget.value === 'Add'){
 
-// const textChange = (event) => {
-//     console.log(event.target.value)
-//     const {name} = event.currentTarget
-//     const {value} = event.currentTarget
-//     console.log(name)
-//     console.log(value)
-//     setText((prevState) => ({...prevState, [name]: value}))
-//     console.log("Skrevet i tekstfeltet:",text)
-// }
+    return(console.log('knapp trykket i forms'));
+  }
+}
+
+
+
     return (
       <Fragment>
 
           <Nav username={username} />
 
         <main>
-        <section>
-          <Forms handleChange={textChange} name={name} />
+        <section className='forms'>
+          <Form onChange={titleChange} name={'title'} id={'title'} type={'text'} />
+          <Textarea onChange={contentChange} name={'content'} id={'content'} rows={"3"} />
+          <Button value={'Add'} onClick={buttonClick}/>
         </section>
         <section id="toDoCards">
           <h2>My todos:</h2>
-          <ToDoCards />
-          <ToDoCards />
-          <ToDoCards />
-          <ToDoCards />
-          <ToDoCards />
-          <ToDoCards />
-          <ToDoCards />
+          <ToDoCards/>
+          <ToDoCards/>
+          <ToDoCards/>
+          <ToDoCards/>
+          <ToDoCards/>
+          <ToDoCards/>
+          <ToDoCards/>
+          <ToDoCards/>
+          <ToDoCards/>
+          <ToDoCards/>
+          <ToDoCards/>
+          <ToDoCards/>
+          <ToDoCards/>
+          <ToDoCards/>
+          <ToDoCards/>
+          <ToDoCards/>
+          <ToDoCards/>
+          <ToDoCards/>
         </section>
         </main>
      </Fragment>

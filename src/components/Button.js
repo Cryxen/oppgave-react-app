@@ -1,13 +1,10 @@
 import React from 'react';
 
 
-const buttonEvent = (event) => {
-    console.log("knapp trykket");
-    }
 
-const Button = ({value}) => {
+const Button = (props) => {
     return (
-        <input type="button" className="button" name="button" value={value} onClick={buttonEvent}/>
+        <input type="button" className="button" name="button" value={props.value} onClick={props.onClick}/>
     )
 }
 
