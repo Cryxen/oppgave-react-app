@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from './Button'
 
+// One single card:
 const ToDoCard = ({onClick}) => {
     return (
             <article>

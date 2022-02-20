@@ -3,8 +3,6 @@ import { Fragment } from 'react';
 
 
 const Textarea = (props) => {
-
-
     return (
         <Fragment>
             <label htmlFor={props.name}>{props.name}</label> 

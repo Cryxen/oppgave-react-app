@@ -4,12 +4,10 @@ import ToDoCard from './ToDoCard';
 import { Fragment } from 'react/cjs/react.development';
 
 
-
-
-
 const ToDoCards = () => {
     const [showCard, setShowCard] = useState(true)
 
+    // Logic to hide cards that are complete
     const clickButton = (event) => {
         console.log('Button in toDoCard pressed');
         setShowCard(!showCard);

@@ -9,8 +9,8 @@ import Button from './components/Button'
 
 // Placeholder for username logic
 let username = ''
-
-
+let cardId = 0
+let cardList = [0]
 const App = () => {
 
 
@@ -18,24 +18,44 @@ const App = () => {
 //title:
 const [title, setTitle] = useState('')
 const titleChange = (event) => {
-  console.log(event.currentTarget.value);
   setTitle(event.currentTarget.value);
-  console.log('current title:', title)
+  console.log('Current title: ', title)
 };
+//Content:
 const [content, setContent] = useState('')
 const contentChange = (event) => {
-  console.log(event.currentTarget.value);
   setContent(event.currentTarget.value);
-  console.log('current content:', content)
+  console.log('Current content: ', content)
 };
 
+const [cards, setCard] = useState(new Map())
+const makeNewCard = (cardId, title, content) => {
+  
+  let card = [cardId={cardId}, title={title}, content={content}];
+  console.log('Card: ',card);
+  console.log(cardId)
+  cardList.push(card);
+  console.log('cardlist ', cardList)
+  console.log('cardState', cards)
+  setCard(new Map(card));
+  console.log(cards)
+  
+}
+
+// const ListCards = () => {
+// let card = cardList.map((item)=><ToDoCards key={item} />, console.log('inside of map'))
+// console.log('inside ListCards', card)
+// return(card)
+// }
 
 // Handle the button clicks
 const buttonClick = (event) =>
 {
   if(event.currentTarget.value === 'Add'){
-
-    return(console.log('knapp trykket i forms'));
+    makeNewCard(cardId, title, content);
+    cardId++
+    // ListCards();
+    return(console.log('Function to handle add title and content to new card.'));
   }
 }
 
@@ -54,24 +74,10 @@ const buttonClick = (event) =>
         </section>
         <section id="toDoCards">
           <h2>My todos:</h2>
-          <ToDoCards/>
-          <ToDoCards/>
-          <ToDoCards/>
-          <ToDoCards/>
-          <ToDoCards/>
-          <ToDoCards/>
-          <ToDoCards/>
-          <ToDoCards/>
-          <ToDoCards/>
-          <ToDoCards/>
-          <ToDoCards/>
-          <ToDoCards/>
-          <ToDoCards/>
-          <ToDoCards/>
-          <ToDoCards/>
-          <ToDoCards/>
-          <ToDoCards/>
-          <ToDoCards/>
+          {/* <ListCards /> */}
+          {cardList.map((cards)=>(
+            <ToDoCards key={cardId}/>
+          ))}
         </section>
         </main>
      </Fragment>
