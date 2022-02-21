@@ -4,20 +4,30 @@ import ToDoCard from './ToDoCard';
 import { Fragment } from 'react/cjs/react.development';
 
 
-const ToDoCards = () => {
+const ToDoCards = ({cardList}) => {
     const [showCard, setShowCard] = useState(true)
 
+
     // Logic to hide cards that are complete
-    const clickButton = (event) => {
+    const buttonclick = (event) => {
         console.log('Button in toDoCard pressed');
-        setShowCard(!showCard);
+
     }
+
+    // const cardHandling = cardList.map ((item) => (
+    //      (
+    //         <ToDoCard title={item.title} content={item.content} />,
+    //         console.log(item)
+    //     )
+    // )
+    // )
+    
+
 
     return (
         <Fragment>
-            {showCard ? (
-            <ToDoCard onClick={clickButton} />
-            ) : null}
+            <ToDoCard buttonclick={buttonclick} />
+            <cardHandling />
             </Fragment>
     )
 }

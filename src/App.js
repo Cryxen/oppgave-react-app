@@ -37,8 +37,8 @@ const makeNewCard = (cardId, title, content) => {
   cardList.push(card);
   console.log('cardlist ', cardList)
   console.log('cardState', cards)
-  setCard(new Map(card));
-  console.log(cards)
+  setCard(new Map());
+  console.log('cards:',cards)
   
 }
 
@@ -54,7 +54,6 @@ const buttonClick = (event) =>
   if(event.currentTarget.value === 'Add'){
     makeNewCard(cardId, title, content);
     cardId++
-    // ListCards();
     return(console.log('Function to handle add title and content to new card.'));
   }
 }
@@ -75,9 +74,7 @@ const buttonClick = (event) =>
         <section id="toDoCards">
           <h2>My todos:</h2>
           {/* <ListCards /> */}
-          {cardList.map((cards)=>(
-            <ToDoCards key={cardId}/>
-          ))}
+        <ToDoCards cardList = {cards} />
         </section>
         </main>
      </Fragment>
