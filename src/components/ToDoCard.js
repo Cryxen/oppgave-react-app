@@ -1,8 +1,9 @@
 import React from 'react';
 import Button from './Button'
 import { useState } from 'react';
+import { Fragment } from 'react/cjs/react.development';
 // One single card:
-const ToDoCard = ({onClick, buttonClick, title, content}) => {
+const ToDoCard = ({ onClick, buttonClick, title, content }) => {
 
     const [showCard, setShowCard] = useState(true)
 
@@ -10,14 +11,28 @@ const ToDoCard = ({onClick, buttonClick, title, content}) => {
         console.log('Button in toDoCard pressed');
         setShowCard(!showCard);
         console.log(showCard)
-        
+
     }
-    return (
+
+
+    if (showCard) {
+        return (
             <article>
-                {showCard ? (<h3>{title}</h3>):null}
-                {showCard ? (<p>{content}</p>):null}
-                {showCard ? (<Button value={'Complete'} onClick={clickButton} />) : null}
+
+                <h3>{title}</h3>
+                <p>{content}</p>
+                <Button value={'Complete'} onClick={clickButton} id={'toDoCardButton'} />
+
             </article>
-    )
+        )
+    }
+    else {
+        return (
+            <p></p>
+        )
+    }
+
+
+
 }
 export default ToDoCard

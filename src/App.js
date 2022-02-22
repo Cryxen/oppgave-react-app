@@ -11,8 +11,8 @@ import Button from './components/Button'
 // Placeholder for username logic
 let username = ''
 let cards = [
-  { id: 0, title: 'title', content: 'content' },
-  { id: 1, title: 'lorem', content: 'ipsum' }
+  { id: 0, title: 'title', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consequat mi quis pretium semper. Proin luctus orci ac neque venenatis, quis commodo dolor posuere. Curabitur dignissim sapien quis cursus egestas. ' },
+  { id: 1, title: 'lorem ipsum', content: 'Cras sodales nisl sed orci mattis iaculis. Nunc eget dolor accumsan, pharetra risus a, vestibulum mauris. Nunc vulputate lobortis mollis. Vivamus nec tellus faucibus, tempor magna nec, facilisis felis. Donec commodo enim a vehicula pellentesque. Nullam vehicula vestibulum est vel ultricies.' }
 ];
 let value;
 let id = 2;
